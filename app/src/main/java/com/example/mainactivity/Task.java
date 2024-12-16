@@ -6,45 +6,62 @@ import java.util.UUID;
 
 public class Task {
     private UUID id;
-
     private String name;
     private Date date;
-    private boolean done;
+    private Boolean done;
+    private Category category;
 
-    public Task() {
+    public Task(){
         id = UUID.randomUUID();
         date = new Date();
     }
 
-    public UUID getId() {
-        return this.id;
+    public Task(String name, Boolean done, Category category)
+    {
+        id = UUID.randomUUID();
+        date = new Date();
+        this.name = name;
+        this.done = done;
+        this.category = category;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public UUID getId() {
+        return id;
+    }
+
+    public void setName(String s)
+    {
+        name = s;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getDate() {
-        return this.date;
+    public Date getDate()
+    {
+        return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
     }
 
-    public boolean isDone() {
-        return this.done;
+    public Boolean isDone()
+    {
+        return done;
     }
 
-    public void setDone(boolean done) {
+    public void setDone(Boolean done) {
         this.done = done;
+    }
+
+    public Category getCategory()
+    {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
